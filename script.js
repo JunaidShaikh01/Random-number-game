@@ -5,7 +5,7 @@ const wonTheGame = function () {
     result.innerText = `You Wan The Game :) \n Number of guesses : ${noOfGuesses} \n Total Scrore : ${totalScore}`;
 }
 
-const lostTheGame = function () {
+const lossTheGame = function () {
     result.innerText = `You Loss The Game :( \n Your total score is ${totalScore} `;
 }
 
@@ -21,9 +21,7 @@ submitBtn.addEventListener('click', function () {
     const guess = parseInt(document.getElementById('guessInput').value);
     noOfGuesses++
     totalScore = score - noOfGuesses;
-    if (totalScore < 0) {
-        lostTheGame()
-    }
+
     for (let index = 1; index <= 10; index++) {
 
         
@@ -39,7 +37,7 @@ submitBtn.addEventListener('click', function () {
             result.textContent = `Enter smaller Number`
         }
         else if(index === 10){
-            lostTheGame()
+            lossTheGame()
         }
         else {
             result.textContent = `Game Over`
